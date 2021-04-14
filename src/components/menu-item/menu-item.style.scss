@@ -7,8 +7,28 @@
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
-  background-position: center;
-  background-size: cover;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+
+    & .background-image {
+      transform: scale(1.1);
+      transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+    & .content {
+      opacity: 0.9;
+    }
+  }
+
+  .background-image {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: all 0.4s;
+  }
 
   &.large {
     height: 380px;
@@ -30,12 +50,17 @@
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    background-color: white;
+    opacity: 0.7;
+    position: absolute;
+    transition: all 0.4s;
 
     .title {
       font-weight: bold;
       margin-bottom: 6px;
       font-size: 22px;
       color: #4a4a4a;
+      text-transform: uppercase;
     }
 
     .subtitle {
